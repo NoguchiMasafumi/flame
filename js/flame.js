@@ -1,7 +1,7 @@
 console.clear();
 
 const flameFrag = document.querySelector("#flame-frag").textContent;
-const baseUrl = "";
+const baseUrl = "https://show-flame.netlify.app/";
 
 const manifest = [
   { name: "noise", url: "noise-texture-11.png?v=9" }
