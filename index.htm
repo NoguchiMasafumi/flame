@@ -46,7 +46,8 @@
     vec2 centerUV = uv;
     
     // height variation from fbm
-    float variationH = fbm(vec2(time * 0.3)) * 1.1;
+    //float variationH = fbm(vec2(time * 0.3)) * 1.1;
+    float variationH = fbm(vec2(time * 0.3)) * 0.5;
     
     // flame "speed"
     vec2 offset = vec2(0.0, -time * 0.05);
