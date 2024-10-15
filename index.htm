@@ -59,14 +59,15 @@
         
     // flame turbulence
     //float f = fbm(uv * 0.1 + offset); // rotation from fbm        
-    float f = fbm(uv * 0.05 + offset); // rotation from fbm        
+    //float f = fbm(uv * 0.05 + offset); // rotation from fbm        
+    float f = fbm(uv * 0.01 + offset); // rotation from fbm        
 
     float l = max(0.1, length(uv)); // rotation amount normalized over distance
 	  uv += rotz(((f - 0.5) / l) * smoothstep(-0.2, 0.4, _uv.y) * 0.45) * uv;    
     
     // flame thickness
     //float flame = 1.9 - length(uv.x) * 8.0;
-    float flame = 1.9 - length(uv.x) * 10.0;
+    float flame = 1.9 - length(uv.x) * 2.0;
     
     // bottom of flame 
     float blueflame = pow(flame * 0.9, 15.0);
