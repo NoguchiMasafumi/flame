@@ -38,7 +38,7 @@
     
     vec2 uv = (vTextureCoord * filterArea.xy) / dimensions;
     uv.y = 1.0 - uv.y;
-    //uv.y -=0.3;
+    uv.y -=0.3;
 
 
     vec2 _uv = uv;
@@ -50,9 +50,10 @@
     // height variation from fbm
     //float variationH = fbm(vec2(time * 0.3)) * 1.1;
     float variationH = fbm(vec2(time * 0.3)) * 0.1;
+    float variationH = fbm(vec2(time * 0.3)) * 0.01;
     
     // flame "speed"
-    vec2 offset = vec2(0.0, -time * 0.03);
+    vec2 offset = vec2(0.0, -time * 0.05);
         
     // flame turbulence
     float f = fbm(uv * 0.1 + offset); // rotation from fbm        
@@ -71,7 +72,7 @@
     
     // flame
     //flame *= smoothstep(1.0, variationH * 0.5, _uv.y);
-    flame *= smoothstep(0.8, 0.6, _uv.y);
+    flame *= smoothstep(0.8, 0.3, _uv.y);
 
 	flame = clamp(flame, 0.0, 1.0);
     flame = pow(flame, 3.0);
