@@ -91,7 +91,7 @@ class Application extends PIXI.Application {
       this.isResized = false;
     }
     
-    this.flame.time += 0.05 * delta;
+    this.flame.time += 0.001 * delta;
   }
 }
 
