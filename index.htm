@@ -38,7 +38,7 @@
     
     vec2 uv = (vTextureCoord * filterArea.xy) / dimensions;
     uv.y = 1.0 - uv.y;
-    uv.y -=0.3;
+    uv.y -=0.2;
 
 
     vec2 _uv = uv;
@@ -74,7 +74,7 @@
     
     // flame
     //flame *= smoothstep(1.0, variationH * 0.5, _uv.y);
-    flame *= smoothstep(0.6, 0.3, _uv.y);
+    flame *= smoothstep(0.5, 0.2, _uv.y);
 
 	flame = clamp(flame, 0.0, 1.0);
     flame = pow(flame, 3.0);
