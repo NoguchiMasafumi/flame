@@ -70,7 +70,7 @@
     
     // flame
     //flame *= smoothstep(1.0, variationH * 0.5, _uv.y);
-    flame *= smoothstep(0.8, 0.78, _uv.y);
+    flame *= smoothstep(0.8, 0.5, _uv.y);
 
 	flame = clamp(flame, 0.0, 1.0);
     flame = pow(flame, 3.0);
