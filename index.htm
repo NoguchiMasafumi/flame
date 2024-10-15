@@ -56,7 +56,9 @@
     vec2 offset = vec2(0.0, -time * 0.05);
         
     // flame turbulence
-    float f = fbm(uv * 0.1 + offset); // rotation from fbm        
+    //float f = fbm(uv * 0.1 + offset); // rotation from fbm        
+    float f = fbm(uv * 0.05 + offset); // rotation from fbm        
+
     float l = max(0.1, length(uv)); // rotation amount normalized over distance
 	  uv += rotz(((f - 0.5) / l) * smoothstep(-0.2, 0.4, _uv.y) * 0.45) * uv;    
     
@@ -72,7 +74,7 @@
     
     // flame
     //flame *= smoothstep(1.0, variationH * 0.5, _uv.y);
-    flame *= smoothstep(0.7, 0.3, _uv.y);
+    flame *= smoothstep(0.6, 0.3, _uv.y);
 
 	flame = clamp(flame, 0.0, 1.0);
     flame = pow(flame, 3.0);
