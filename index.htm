@@ -38,7 +38,7 @@
     
     vec2 uv = (vTextureCoord * filterArea.xy) / dimensions;
     uv.y = 1.0 - uv.y;
-    uv.y -=0.3;
+    //uv.y -=0.3;
 
 
     vec2 _uv = uv;
@@ -52,7 +52,7 @@
     float variationH = fbm(vec2(time * 0.3)) * 0.1;
     
     // flame "speed"
-    vec2 offset = vec2(0.0, -time * 0.05);
+    vec2 offset = vec2(0.0, -time * 0.03);
         
     // flame turbulence
     float f = fbm(uv * 0.1 + offset); // rotation from fbm        
@@ -60,7 +60,8 @@
 	  uv += rotz(((f - 0.5) / l) * smoothstep(-0.2, 0.4, _uv.y) * 0.45) * uv;    
     
     // flame thickness
-    float flame = 1.9 - length(uv.x) * 8.0;
+    //float flame = 1.9 - length(uv.x) * 8.0;
+    float flame = 1.9 - length(uv.x) * 10.0;
     
     // bottom of flame 
     float blueflame = pow(flame * 0.9, 15.0);
