@@ -49,8 +49,8 @@
     
     // height variation from fbm
     //float variationH = fbm(vec2(time * 0.3)) * 1.1;
-    //float variationH = fbm(vec2(time * 0.3)) * 0.1;
-    float variationH = fbm(vec2(time * 0.3)) * 0.01;
+    float variationH = fbm(vec2(time * 0.3)) * 0.1;
+    //float variationH = fbm(vec2(time * 0.3)) * 0.01;
     
     // flame "speed"
     vec2 offset = vec2(0.0, -time * 0.05);
@@ -74,7 +74,7 @@
     
     // flame
     //flame *= smoothstep(1.0, variationH * 0.5, _uv.y);
-    flame *= smoothstep(0.5, 0.2, _uv.y);
+    flame *= smoothstep(0.8, 0.1, _uv.y);
 
 	flame = clamp(flame, 0.0, 1.0);
     flame = pow(flame, 3.0);
