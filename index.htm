@@ -50,8 +50,7 @@
     float variationH = fbm(vec2(time * 0.3)) * 0.1;
     
     // flame "speed"
-    //vec2 offset = vec2(0.0, -time * 0.05);
-    vec2 offset = vec2(0.0, -time * 0.1);
+    vec2 offset = vec2(0.0, -time * 0.05);
         
     // flame turbulence
     float f = fbm(uv * 0.1 + offset); // rotation from fbm        
